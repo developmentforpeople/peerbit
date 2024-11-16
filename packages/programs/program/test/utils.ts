@@ -1,4 +1,3 @@
-import { CustomEvent } from "@libp2p/interface";
 import {
 	Ed25519Keypair,
 	type PublicSignKey,
@@ -149,6 +148,7 @@ export const createPeer = async (
 					}
 				},
 				waitFor: () => Promise.resolve(),
+				getPublicKey: (_hash: string) => keypair.publicKey, // TODO
 			},
 			keychain: undefined as any, // TODO
 		},

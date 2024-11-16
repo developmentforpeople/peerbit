@@ -374,6 +374,138 @@
   * devDependencies
     * @peerbit/test-utils bumped from 2.0.32 to 2.0.33
 
+## [3.0.54](https://github.com/dao-xyz/peerbit/compare/proxy-window-v3.0.53...proxy-window-v3.0.54) (2024-11-08)
+
+
+### Dependencies
+
+* The following workspace dependencies were updated
+  * dependencies
+    * @peerbit/proxy bumped from ^5.0.3 to ^5.0.4
+  * devDependencies
+    * @peerbit/test-utils bumped from 2.1.8 to 2.1.9
+
+## [3.0.53](https://github.com/dao-xyz/peerbit/compare/proxy-window-v3.0.52...proxy-window-v3.0.53) (2024-11-07)
+
+
+### Dependencies
+
+* The following workspace dependencies were updated
+  * dependencies
+    * @peerbit/proxy bumped from ^5.0.2 to ^5.0.3
+  * devDependencies
+    * @peerbit/test-utils bumped from 2.1.7 to 2.1.8
+
+## [3.0.52](https://github.com/dao-xyz/peerbit/compare/proxy-window-v3.0.51...proxy-window-v3.0.52) (2024-10-28)
+
+
+### Dependencies
+
+* The following workspace dependencies were updated
+  * dependencies
+    * @peerbit/proxy bumped from ^5.0.1 to ^5.0.2
+  * devDependencies
+    * @peerbit/test-utils bumped from 2.1.6 to 2.1.7
+
+## [3.0.51](https://github.com/dao-xyz/peerbit/compare/proxy-window-v3.0.50...proxy-window-v3.0.51) (2024-10-28)
+
+
+### Dependencies
+
+* The following workspace dependencies were updated
+  * dependencies
+    * @peerbit/proxy bumped from ^5.0.0 to ^5.0.1
+  * devDependencies
+    * @peerbit/test-utils bumped from 2.1.5 to 2.1.6
+
+## [3.0.50](https://github.com/dao-xyz/peerbit/compare/proxy-window-v3.0.49...proxy-window-v3.0.50) (2024-10-28)
+
+
+### Dependencies
+
+* The following workspace dependencies were updated
+  * dependencies
+    * @peerbit/proxy bumped from ^4.0.1 to ^5.0.0
+  * devDependencies
+    * @peerbit/test-utils bumped from 2.1.4 to 2.1.5
+
+## [3.0.49](https://github.com/dao-xyz/peerbit/compare/proxy-window-v3.0.48...proxy-window-v3.0.49) (2024-10-21)
+
+
+### Dependencies
+
+* The following workspace dependencies were updated
+  * dependencies
+    * @peerbit/proxy bumped from ^4.0.0 to ^4.0.1
+  * devDependencies
+    * @peerbit/test-utils bumped from 2.1.3 to 2.1.4
+
+## [3.0.48](https://github.com/dao-xyz/peerbit/compare/proxy-window-v3.0.47...proxy-window-v3.0.48) (2024-10-19)
+
+
+### Dependencies
+
+* The following workspace dependencies were updated
+  * dependencies
+    * @peerbit/proxy bumped from ^3.1.12 to ^4.0.0
+  * devDependencies
+    * @peerbit/test-utils bumped from 2.1.2 to 2.1.3
+
+## [3.0.47](https://github.com/dao-xyz/peerbit/compare/proxy-window-v3.0.46...proxy-window-v3.0.47) (2024-10-19)
+
+
+### Dependencies
+
+* The following workspace dependencies were updated
+  * dependencies
+    * @peerbit/proxy bumped from ^3.1.11 to ^3.1.12
+  * devDependencies
+    * @peerbit/test-utils bumped from 2.1.1 to 2.1.2
+
+## [3.0.46](https://github.com/dao-xyz/peerbit/compare/proxy-window-v3.0.45...proxy-window-v3.0.46) (2024-10-13)
+
+
+### Dependencies
+
+* The following workspace dependencies were updated
+  * dependencies
+    * @peerbit/proxy bumped from ^3.1.10 to ^3.1.11
+  * devDependencies
+    * @peerbit/test-utils bumped from 2.1.0 to 2.1.1
+
+## [3.0.45](https://github.com/dao-xyz/peerbit/compare/proxy-window-v3.0.44...proxy-window-v3.0.45) (2024-10-11)
+
+
+### Dependencies
+
+* The following workspace dependencies were updated
+  * dependencies
+    * @peerbit/proxy bumped from ^3.1.9 to ^3.1.10
+  * devDependencies
+    * @peerbit/test-utils bumped from 2.0.43 to 2.1.0
+
+## [3.0.44](https://github.com/dao-xyz/peerbit/compare/proxy-window-v3.0.43...proxy-window-v3.0.44) (2024-09-26)
+
+
+### Dependencies
+
+* The following workspace dependencies were updated
+  * dependencies
+    * @peerbit/proxy bumped from ^3.1.8 to ^3.1.9
+  * devDependencies
+    * @peerbit/test-utils bumped from 2.0.42 to 2.0.43
+
+## [3.0.43](https://github.com/dao-xyz/peerbit/compare/proxy-window-v3.0.42...proxy-window-v3.0.43) (2024-09-01)
+
+
+### Dependencies
+
+* The following workspace dependencies were updated
+  * dependencies
+    * @peerbit/proxy bumped from ^3.1.7 to ^3.1.8
+  * devDependencies
+    * @peerbit/test-utils bumped from 2.0.41 to 2.0.42
+
 ## [3.0.42](https://github.com/dao-xyz/peerbit/compare/proxy-window-v3.0.41...proxy-window-v3.0.42) (2024-08-12)
 
 

@@ -2,8 +2,7 @@ import { AnyBlockStore, type BlockStore } from "@peerbit/blocks";
 import { HashmapIndices } from "@peerbit/indexer-simple";
 import assert from "assert";
 import { expect } from "chai";
-import { LamportClock as Clock, Timestamp } from "../src/clock.js";
-import { createEntry } from "../src/entry-create.js";
+import { Timestamp } from "../src/clock.js";
 import { Log } from "../src/log.js";
 import { signKey, signKey2, signKey3 } from "./fixtures/privateKey.js";
 import { JSON_ENCODING } from "./utils/encoding.js";
@@ -99,6 +98,49 @@ describe("properties", function () {
 			);
 			assert.deepStrictEqual(entry, undefined);
 		});
+
+		it("does not fetch from remotes by if missing block by default", async () => {
+			const storeGetFn = store.get.bind(store);
+			let remoteFetchOptions: any = undefined;
+			let fetched = false;
+			store.get = async (hash, options) => {
+				remoteFetchOptions = options;
+				fetched = true;
+				return storeGetFn(hash, options);
+			};
+			log.entryIndex.has = () => Promise.resolve(true);
+
+			const entry = await log.get(
+				"zb2rhbnwihVVVVEGAPf9EwTZBsQz9fszCnM4Y8mJmBFgiyN7J",
+			);
+			assert.deepStrictEqual(entry, undefined);
+			expect(fetched).to.be.true;
+			expect(remoteFetchOptions.remote).to.be.undefined;
+		});
+
+		it("fetches remotes with timeout", async () => {
+			const storeGetFn = store.get.bind(store);
+			let timeout: any = undefined;
+			let fetched = false;
+			store.get = async (hash, options) => {
+				timeout = (options?.remote as any)?.["timeout"];
+				fetched = true;
+				return storeGetFn(hash, options);
+			};
+			log.entryIndex.has = () => Promise.resolve(true);
+
+			const entry = await log.get(
+				"zb2rhbnwihVVVVEGAPf9EwTZBsQz9fszCnM4Y8mJmBFgiyN7J",
+				{
+					remote: {
+						timeout: 123,
+					},
+				},
+			);
+			assert.deepStrictEqual(entry, undefined);
+			expect(fetched).to.be.true;
+			expect(timeout).to.eq(123);
+		});
 	});
 
 	describe("setIdentity", () => {
@@ -153,141 +195,6 @@ describe("properties", function () {
 		});
 	});
 
-	describe("reset", () => {
-		it("sets items if given as params", async () => {
-			const one = await createEntry({
-				store,
-				identity: signKey,
-				meta: {
-					gidSeed: Buffer.from("a"),
-					clock: new Clock({ id: new Uint8Array([0]), timestamp: 0 }),
-					next: [],
-				},
-				data: "entryA",
-				encoding: JSON_ENCODING,
-			});
-			const two = await createEntry({
-				store,
-				identity: signKey,
-				meta: {
-					gidSeed: Buffer.from("a"),
-					clock: new Clock({ id: new Uint8Array([1]), timestamp: 0 }),
-					next: [],
-				},
-				data: "entryB",
-				encoding: JSON_ENCODING,
-			});
-			const three = await createEntry({
-				store,
-				identity: signKey,
-				meta: {
-					gidSeed: Buffer.from("a"),
-					clock: new Clock({ id: new Uint8Array([2]), timestamp: 0 }),
-					next: [],
-				},
-				data: "entryC",
-				encoding: JSON_ENCODING,
-			});
-			const log = new Log<string>();
-			await log.open(store, signKey, { encoding: JSON_ENCODING });
-			await log.reset([one, two, three]);
-
-			expect(log.length).equal(3);
-			expect((await log.toArray())[0].payload.getValue()).equal("entryA");
-			expect((await log.toArray())[1].payload.getValue()).equal("entryB");
-			expect((await log.toArray())[2].payload.getValue()).equal("entryC");
-		});
-
-		it("sorts on reset", async () => {
-			const one = await createEntry({
-				store,
-				identity: signKey,
-				meta: {
-					gidSeed: Buffer.from("a"),
-					next: [],
-				},
-				data: "entryA",
-				encoding: JSON_ENCODING,
-			});
-			const two = await createEntry({
-				store,
-				identity: signKey,
-				meta: {
-					gidSeed: Buffer.from("a"),
-					next: [],
-				},
-				data: "entryB",
-				encoding: JSON_ENCODING,
-			});
-			const three = await createEntry({
-				store,
-				identity: signKey,
-				meta: {
-					gidSeed: Buffer.from("a"),
-					next: [],
-				},
-				data: "entryC",
-				encoding: JSON_ENCODING,
-			});
-			const log = new Log<string>();
-			await log.open(store, signKey, { encoding: JSON_ENCODING });
-			await log.reset([two, three, one]);
-			expect((await log.getHeads().all()).map((x) => x.hash)).to.have.members([
-				one.hash,
-				two.hash,
-				three.hash,
-			]);
-		});
-
-		it("resets and skips", async () => {
-			const one = await createEntry({
-				store,
-				identity: signKey,
-				meta: {
-					gidSeed: Buffer.from("a"),
-					clock: new Clock({ id: new Uint8Array([0]), timestamp: 0 }),
-					next: [],
-				},
-				data: "entryA",
-				encoding: JSON_ENCODING,
-			});
-			const two = await createEntry({
-				store,
-				identity: signKey,
-				meta: {
-					gidSeed: Buffer.from("a"),
-					clock: new Clock({ id: new Uint8Array([1]), timestamp: 0 }),
-					next: [],
-				},
-				data: "entryB",
-				encoding: JSON_ENCODING,
-			});
-			const three = await createEntry({
-				store,
-				identity: signKey,
-				meta: {
-					gidSeed: Buffer.from("a"),
-					clock: new Clock({ id: new Uint8Array([2]), timestamp: 0 }),
-					next: [],
-				},
-				data: "entryC",
-				encoding: JSON_ENCODING,
-			});
-			const log = new Log<string>();
-			await log.open(store, signKey, { encoding: JSON_ENCODING });
-			await log.join([one, two, three]);
-			expect(log.length).equal(3);
-			expect((await log.toArray())[0].payload.getValue()).equal("entryA");
-			expect((await log.toArray())[1].payload.getValue()).equal("entryB");
-			expect((await log.toArray())[1].payload.getValue()).equal("entryB");
-
-			await log.reset([one, two]);
-
-			expect(log.length).equal(2);
-			expect((await log.toArray())[0].payload.getValue()).equal("entryA");
-			expect((await log.toArray())[1].payload.getValue()).equal("entryB");
-		});
-	});
 	describe("values", () => {
 		it("returns all entries in the log", async () => {
 			const log = new Log<Uint8Array>();

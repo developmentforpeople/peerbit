@@ -52,8 +52,8 @@ export class BigUnsignedIntegerValue extends IntegerValue {
 
 	constructor(number: bigint) {
 		super();
-		if (number > 18446744073709551615n || number < 0) {
-			throw new Error("Number is not u32");
+		if (number > 18446744073709551615n || number < 0n) {
+			throw new Error("Number is not u64");
 		}
 		this.number = number;
 	}
@@ -93,7 +93,7 @@ export class Uint8ArrayKey extends IdKey {
 		this.key = key;
 	}
 
-	private _keyString: string;
+	private _keyString!: string;
 	get primitive(): string {
 		return this._keyString || (this._keyString = toBase64(this.key));
 	}
@@ -141,7 +141,7 @@ export const toId = (obj: Ideable): IdKey => {
 		return new IntegerKey(obj);
 	}
 	if (typeof obj === "bigint") {
-		if (obj <= Number.MAX_SAFE_INTEGER && obj >= 0) {
+		if (obj <= Number.MAX_SAFE_INTEGER && obj >= 0n) {
 			return new IntegerKey(Number(obj));
 		}
 		throw new Error(

@@ -75,7 +75,6 @@ describe("index", () => {
 
 	it("dial", async () => {
 		await client1.dial(session.peers[1].getMultiaddrs());
-		expect(session.peers[1]);
 		expect(client1.getMultiaddrs().map((x) => x.toString())).to.deep.equal(
 			host1.getMultiaddrs().map((x) => x.toString()),
 		);
@@ -260,12 +259,12 @@ describe("index", () => {
 			await client1.services.blocks.rm(cid);
 
 			let t0 = +new Date();
-			expect(await client1.services.blocks.get(cid, { timeout: 1000 })).equal(
-				undefined,
-			);
-			expect(await host1.services.blocks.get(cid, { timeout: 1000 })).equal(
-				undefined,
-			);
+			expect(
+				await client1.services.blocks.get(cid, { remote: { timeout: 1000 } }),
+			).equal(undefined);
+			expect(
+				await host1.services.blocks.get(cid, { remote: { timeout: 1000 } }),
+			).equal(undefined);
 			expect(+new Date() - t0).lessThan(3000);
 
 			expect(await client1.services.blocks.has(cid)).equal(false);
@@ -436,6 +435,15 @@ describe("index", () => {
 
 			await waitForResolved(() => expect(receivedMessages).to.have.length(1));
 			expect(receivedMessages[0]).to.be.instanceOf(GetSubscribers);
+		});
+
+		it("getPublicKey", async () => {
+			await client1.services.pubsub.waitFor(client2.peerId);
+			expect(
+				(await client1.services.pubsub.getPublicKey(
+					client2.identity.publicKey.hashcode(),
+				))!.equals(client2.identity.publicKey),
+			);
 		});
 	});
 });

@@ -202,6 +202,92 @@
     * @peerbit/pubsub-interface bumped from ^3.0.2 to ^3.0.3
     * @peerbit/any-store bumped from ^2.0.1 to ^2.0.2
 
+## [5.0.8](https://github.com/dao-xyz/peerbit/compare/program-v5.0.7...program-v5.0.8) (2024-10-28)
+
+
+### Dependencies
+
+* The following workspace dependencies were updated
+  * dependencies
+    * @peerbit/blocks-interface bumped from ^1.3.6 to ^1.3.7
+
+## [5.0.7](https://github.com/dao-xyz/peerbit/compare/program-v5.0.6...program-v5.0.7) (2024-10-28)
+
+
+### Dependencies
+
+* The following workspace dependencies were updated
+  * dependencies
+    * @peerbit/blocks-interface bumped from ^1.3.5 to ^1.3.6
+    * @peerbit/pubsub-interface bumped from ^3.1.0 to ^3.1.1
+
+## [5.0.6](https://github.com/dao-xyz/peerbit/compare/program-v5.0.5...program-v5.0.6) (2024-10-21)
+
+
+### Bug Fixes
+
+* refactor remote fetch settings ([d2c5598](https://github.com/dao-xyz/peerbit/commit/d2c559879144cbd112e614164d1888d6afe79c2e))
+
+
+### Dependencies
+
+* The following workspace dependencies were updated
+  * dependencies
+    * @peerbit/blocks-interface bumped from ^1.3.4 to ^1.3.5
+
+## [5.0.5](https://github.com/dao-xyz/peerbit/compare/program-v5.0.4...program-v5.0.5) (2024-10-19)
+
+
+### Bug Fixes
+
+* waitFor throw Timeout Error ([e202d1e](https://github.com/dao-xyz/peerbit/commit/e202d1e1b660d6e2131b442c3c974fe248403a9e))
+
+
+### Dependencies
+
+* The following workspace dependencies were updated
+  * dependencies
+    * @peerbit/blocks-interface bumped from ^1.3.3 to ^1.3.4
+    * @peerbit/pubsub-interface bumped from ^3.0.6 to ^3.1.0
+
+## [5.0.4](https://github.com/dao-xyz/peerbit/compare/program-v5.0.3...program-v5.0.4) (2024-10-13)
+
+
+### Dependencies
+
+* The following workspace dependencies were updated
+  * dependencies
+    * @peerbit/blocks-interface bumped from ^1.3.2 to ^1.3.3
+
+## [5.0.3](https://github.com/dao-xyz/peerbit/compare/program-v5.0.2...program-v5.0.3) (2024-10-11)
+
+
+### Bug Fixes
+
+* update libp2p ([5acd13c](https://github.com/dao-xyz/peerbit/commit/5acd13cc9e847eec8110e6ad9233116678d16b33))
+
+
+### Dependencies
+
+* The following workspace dependencies were updated
+  * dependencies
+    * @peerbit/crypto bumped from 2.3.1 to 2.3.2
+    * @peerbit/keychain bumped from ^1.0.19 to ^1.0.20
+    * @peerbit/blocks-interface bumped from ^1.3.1 to ^1.3.2
+    * @peerbit/pubsub-interface bumped from ^3.0.5 to ^3.0.6
+
+## [5.0.2](https://github.com/dao-xyz/peerbit/compare/program-v5.0.1...program-v5.0.2) (2024-09-01)
+
+
+### Dependencies
+
+* The following workspace dependencies were updated
+  * dependencies
+    * @peerbit/crypto bumped from 2.3.0 to 2.3.1
+    * @peerbit/keychain bumped from ^1.0.18 to ^1.0.19
+    * @peerbit/blocks-interface bumped from ^1.3.0 to ^1.3.1
+    * @peerbit/pubsub-interface bumped from ^3.0.4 to ^3.0.5
+
 ## [5.0.1](https://github.com/dao-xyz/peerbit/compare/program-v5.0.0...program-v5.0.1) (2024-07-28)
 
 

@@ -1,12 +1,12 @@
+import { noise } from "@chainsafe/libp2p-noise";
 import { yamux } from "@chainsafe/libp2p-yamux";
-import { noise } from "@dao-xyz/libp2p-noise";
 import { type CircuitRelayService } from "@libp2p/circuit-relay-v2";
 import { identify } from "@libp2p/identify";
 import type { Multiaddr } from "@multiformats/multiaddr";
 import { waitFor } from "@peerbit/time";
 import { setMaxListeners } from "events";
 import { type Libp2p, type Libp2pOptions, createLibp2p } from "libp2p";
-import { relay, transports } from "./transports.js";
+import { listen, relay, transports } from "./transports.js";
 
 type DefaultServices = { relay: CircuitRelayService; identify: any };
 type Libp2pWithServices<T> = Libp2p<T & DefaultServices>;
@@ -88,22 +88,31 @@ export class TestSession<T> {
 			const result = async () => {
 				const definedOptions: Libp2pOptions<T> | undefined =
 					(options as any)?.[i] || options;
+
+				const services: any = {
+					identify: identify(),
+					...definedOptions?.services,
+				};
+				if (definedOptions?.services?.relay !== null) {
+					services.relay = relay();
+				} else {
+					delete services.relay;
+				}
+
 				const node = await createLibp2p<T>({
 					addresses: {
-						listen: ["/ip4/127.0.0.1/tcp/0", "/ip4/127.0.0.1/tcp/0/ws"],
+						listen: listen(),
 					},
-					connectionManager: definedOptions?.connectionManager ?? {
-						minConnections: 0,
-					},
-					peerId: definedOptions?.peerId,
+					connectionManager: definedOptions?.connectionManager,
+					privateKey: definedOptions?.privateKey,
 					datastore: definedOptions?.datastore,
 					transports: definedOptions?.transports ?? transports(),
-					services: {
-						relay: relay(),
-						identify: identify(),
-						...definedOptions?.services,
-					} as any,
-					connectionEncryption: [noise()],
+					connectionMonitor: {
+						enabled: false,
+					},
+
+					services,
+					connectionEncrypters: [noise()],
 					streamMuxers: definedOptions?.streamMuxers || [yamux()],
 					start: definedOptions?.start,
 				});

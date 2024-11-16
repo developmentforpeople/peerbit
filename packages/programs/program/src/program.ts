@@ -1,7 +1,6 @@
 import { type Constructor, getSchema, variant } from "@dao-xyz/borsh";
 import { deserialize, serialize } from "@dao-xyz/borsh";
 import {
-	CustomEvent,
 	type PeerId as Libp2pPeerId,
 	TypedEventEmitter,
 	type TypedEventTarget,
@@ -12,6 +11,7 @@ import {
 	SubscriptionEvent,
 	UnsubcriptionEvent,
 } from "@peerbit/pubsub-interface";
+import { TimeoutError } from "@peerbit/time";
 import { type Address } from "./address.js";
 import { type Client } from "./client.js";
 import {
@@ -368,17 +368,24 @@ export abstract class Program<
 	/**
 	 * Wait for another peer to be 'ready' to talk with you for this particular program
 	 * @param other
+	 * @throws TimeoutError if the timeout is reached
 	 */
 	async waitFor(
-		other: PublicSignKey | Libp2pPeerId | (PublicSignKey | Libp2pPeerId)[],
+		other:
+			| PublicSignKey
+			| Libp2pPeerId
+			| string
+			| (PublicSignKey | string | Libp2pPeerId)[],
 		options?: { signal?: AbortSignal; timeout?: number },
 	): Promise<void> {
 		const ids = Array.isArray(other) ? other : [other];
 		const expectedHashes = new Set(
 			ids.map((x) =>
-				x instanceof PublicSignKey
-					? x.hashcode()
-					: getPublicKeyFromPeerId(x).hashcode(),
+				typeof x === "string"
+					? x
+					: x instanceof PublicSignKey
+						? x.hashcode()
+						: getPublicKeyFromPeerId(x).hashcode(),
 			),
 		);
 
@@ -395,7 +402,7 @@ export abstract class Program<
 				() => {
 					this.node.services.pubsub.removeEventListener("subscribe", listener);
 					options?.signal?.removeEventListener("abort", abortListener);
-					reject(new Error("Timeout"));
+					reject(new TimeoutError("Timeout waiting for replicating peer"));
 				},
 				options?.timeout || 10 * 1000,
 			);
@@ -507,7 +514,11 @@ export abstract class Program<
 			timeout?: number;
 		},
 	): Promise<P | undefined> {
-		const bytes = await store.get(address, options);
+		const bytes = await store.get(address, {
+			remote: {
+				timeout: options?.timeout,
+			},
+		});
 		if (!bytes) {
 			return undefined;
 		}

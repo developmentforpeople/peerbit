@@ -27,25 +27,40 @@ export class RESP_PutBlock extends BlocksMessage {
 	}
 }
 
-@variant(2)
-export class REQ_GetBlock extends BlocksMessage {
-	@field({ type: "string" })
-	cid: string;
-
+class RemoteGetOptions {
 	@field({ type: "bool" })
 	replicate: boolean;
 
 	@field({ type: option("u32") })
 	timeout?: number;
 
+	constructor(options?: { replicate?: boolean; timeout?: number }) {
+		this.replicate = options?.replicate || false;
+		this.timeout = options?.timeout;
+	}
+}
+@variant(2)
+export class REQ_GetBlock extends BlocksMessage {
+	@field({ type: "string" })
+	cid: string;
+
+	@field({ type: option(RemoteGetOptions) })
+	remote?: RemoteGetOptions;
+
 	constructor(
 		cid: string,
-		options?: { timeout?: number; replicate?: boolean },
+		options?: { remote?: { timeout?: number; replicate?: boolean } | boolean },
 	) {
 		super();
 		this.cid = cid;
-		this.timeout = options?.timeout;
-		this.replicate = options?.replicate || false;
+		const remoteOptions = options?.remote;
+		if (typeof remoteOptions === "boolean") {
+			this.remote = options ? new RemoteGetOptions() : undefined;
+		} else {
+			this.remote = remoteOptions
+				? new RemoteGetOptions(remoteOptions)
+				: undefined;
+		}
 	}
 }
 
@@ -122,14 +137,17 @@ export class RESP_Iterator extends BlocksMessage {
 
 @variant(10)
 export class REQ_BlockWaitFor extends BlocksMessage {
-	@field({ type: PublicSignKey })
-	publicKey: PublicSignKey;
-	constructor(publicKey: PeerId | PublicSignKey) {
+	@field({ type: "string" })
+	hash: string;
+
+	constructor(publicKey: PeerId | PublicSignKey | string) {
 		super();
-		this.publicKey =
-			publicKey instanceof PublicSignKey
+		this.hash =
+			typeof publicKey === "string"
 				? publicKey
-				: getPublicKeyFromPeerId(publicKey);
+				: publicKey instanceof PublicSignKey
+					? publicKey.hashcode()
+					: getPublicKeyFromPeerId(publicKey).hashcode();
 	}
 }
 

@@ -417,6 +417,130 @@
   * devDependencies
     * @peerbit/test-utils bumped from ^2.0.32 to ^2.0.33
 
+## [5.0.19](https://github.com/dao-xyz/peerbit/compare/rpc-v5.0.18...rpc-v5.0.19) (2024-11-08)
+
+
+### Dependencies
+
+* The following workspace dependencies were updated
+  * devDependencies
+    * @peerbit/test-utils bumped from ^2.1.8 to ^2.1.9
+
+## [5.0.18](https://github.com/dao-xyz/peerbit/compare/rpc-v5.0.17...rpc-v5.0.18) (2024-11-07)
+
+
+### Dependencies
+
+* The following workspace dependencies were updated
+  * devDependencies
+    * @peerbit/test-utils bumped from ^2.1.7 to ^2.1.8
+
+## [5.0.17](https://github.com/dao-xyz/peerbit/compare/rpc-v5.0.16...rpc-v5.0.17) (2024-10-28)
+
+
+### Dependencies
+
+* The following workspace dependencies were updated
+  * dependencies
+    * @peerbit/program bumped from 5.0.7 to 5.0.8
+  * devDependencies
+    * @peerbit/test-utils bumped from ^2.1.6 to ^2.1.7
+
+## [5.0.16](https://github.com/dao-xyz/peerbit/compare/rpc-v5.0.15...rpc-v5.0.16) (2024-10-28)
+
+
+### Dependencies
+
+* The following workspace dependencies were updated
+  * devDependencies
+    * @peerbit/test-utils bumped from ^2.1.5 to ^2.1.6
+
+## [5.0.15](https://github.com/dao-xyz/peerbit/compare/rpc-v5.0.14...rpc-v5.0.15) (2024-10-28)
+
+
+### Dependencies
+
+* The following workspace dependencies were updated
+  * dependencies
+    * @peerbit/program bumped from 5.0.6 to 5.0.7
+  * devDependencies
+    * @peerbit/test-utils bumped from ^2.1.4 to ^2.1.5
+
+## [5.0.14](https://github.com/dao-xyz/peerbit/compare/rpc-v5.0.13...rpc-v5.0.14) (2024-10-21)
+
+
+### Dependencies
+
+* The following workspace dependencies were updated
+  * dependencies
+    * @peerbit/program bumped from 5.0.5 to 5.0.6
+  * devDependencies
+    * @peerbit/test-utils bumped from ^2.1.3 to ^2.1.4
+
+## [5.0.13](https://github.com/dao-xyz/peerbit/compare/rpc-v5.0.12...rpc-v5.0.13) (2024-10-19)
+
+
+### Dependencies
+
+* The following workspace dependencies were updated
+  * dependencies
+    * @peerbit/program bumped from 5.0.4 to 5.0.5
+  * devDependencies
+    * @peerbit/test-utils bumped from ^2.1.2 to ^2.1.3
+
+## [5.0.12](https://github.com/dao-xyz/peerbit/compare/rpc-v5.0.11...rpc-v5.0.12) (2024-10-19)
+
+
+### Dependencies
+
+* The following workspace dependencies were updated
+  * devDependencies
+    * @peerbit/test-utils bumped from ^2.1.1 to ^2.1.2
+
+## [5.0.11](https://github.com/dao-xyz/peerbit/compare/rpc-v5.0.10...rpc-v5.0.11) (2024-10-13)
+
+
+### Dependencies
+
+* The following workspace dependencies were updated
+  * dependencies
+    * @peerbit/program bumped from 5.0.3 to 5.0.4
+  * devDependencies
+    * @peerbit/test-utils bumped from ^2.1.0 to ^2.1.1
+
+## [5.0.10](https://github.com/dao-xyz/peerbit/compare/rpc-v5.0.9...rpc-v5.0.10) (2024-10-11)
+
+
+### Dependencies
+
+* The following workspace dependencies were updated
+  * dependencies
+    * @peerbit/crypto bumped from 2.3.1 to 2.3.2
+    * @peerbit/program bumped from 5.0.2 to 5.0.3
+  * devDependencies
+    * @peerbit/test-utils bumped from ^2.0.43 to ^2.1.0
+
+## [5.0.9](https://github.com/dao-xyz/peerbit/compare/rpc-v5.0.8...rpc-v5.0.9) (2024-09-26)
+
+
+### Dependencies
+
+* The following workspace dependencies were updated
+  * devDependencies
+    * @peerbit/test-utils bumped from ^2.0.42 to ^2.0.43
+
+## [5.0.8](https://github.com/dao-xyz/peerbit/compare/rpc-v5.0.7...rpc-v5.0.8) (2024-09-01)
+
+
+### Dependencies
+
+* The following workspace dependencies were updated
+  * dependencies
+    * @peerbit/crypto bumped from 2.3.0 to 2.3.1
+    * @peerbit/program bumped from 5.0.1 to 5.0.2
+  * devDependencies
+    * @peerbit/test-utils bumped from ^2.0.41 to ^2.0.42
+
 ## [5.0.7](https://github.com/dao-xyz/peerbit/compare/rpc-v5.0.6...rpc-v5.0.7) (2024-08-12)
 
 

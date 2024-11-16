@@ -389,6 +389,230 @@
   * devDependencies
     * @peerbit/test-utils bumped from ^2.0.31 to ^2.0.32
 
+## [9.2.13](https://github.com/dao-xyz/peerbit/compare/shared-log-v9.2.12...shared-log-v9.2.13) (2024-11-08)
+
+
+### Dependencies
+
+* The following workspace dependencies were updated
+  * dependencies
+    * @peerbit/log bumped from 4.0.20 to 4.0.21
+    * @peerbit/rpc bumped from 5.0.18 to 5.0.19
+  * devDependencies
+    * @peerbit/test-utils bumped from ^2.1.8 to ^2.1.9
+
+## [9.2.12](https://github.com/dao-xyz/peerbit/compare/shared-log-v9.2.11...shared-log-v9.2.12) (2024-11-07)
+
+
+### Dependencies
+
+* The following workspace dependencies were updated
+  * dependencies
+    * @peerbit/log bumped from 4.0.19 to 4.0.20
+    * @peerbit/rpc bumped from 5.0.17 to 5.0.18
+  * devDependencies
+    * @peerbit/test-utils bumped from ^2.1.7 to ^2.1.8
+
+## [9.2.11](https://github.com/dao-xyz/peerbit/compare/shared-log-v9.2.10...shared-log-v9.2.11) (2024-10-28)
+
+
+### Dependencies
+
+* The following workspace dependencies were updated
+  * dependencies
+    * @peerbit/program bumped from 5.0.7 to 5.0.8
+    * @peerbit/log bumped from 4.0.18 to 4.0.19
+    * @peerbit/rpc bumped from 5.0.16 to 5.0.17
+  * devDependencies
+    * @peerbit/test-utils bumped from ^2.1.6 to ^2.1.7
+
+## [9.2.10](https://github.com/dao-xyz/peerbit/compare/shared-log-v9.2.9...shared-log-v9.2.10) (2024-10-28)
+
+
+### Dependencies
+
+* The following workspace dependencies were updated
+  * dependencies
+    * @peerbit/log bumped from 4.0.17 to 4.0.18
+    * @peerbit/rpc bumped from 5.0.15 to 5.0.16
+  * devDependencies
+    * @peerbit/test-utils bumped from ^2.1.5 to ^2.1.6
+
+## [9.2.9](https://github.com/dao-xyz/peerbit/compare/shared-log-v9.2.8...shared-log-v9.2.9) (2024-10-28)
+
+
+### Bug Fixes
+
+* correctly handle unreplicated content where new participants join with non-covering segments ([56ea8ee](https://github.com/dao-xyz/peerbit/commit/56ea8eeb88e83c9998d3ff2ce4d17a5c4911074e))
+
+
+### Dependencies
+
+* The following workspace dependencies were updated
+  * dependencies
+    * @peerbit/program bumped from 5.0.6 to 5.0.7
+    * @peerbit/log bumped from 4.0.16 to 4.0.17
+    * @peerbit/rpc bumped from 5.0.14 to 5.0.15
+  * devDependencies
+    * @peerbit/test-utils bumped from ^2.1.4 to ^2.1.5
+
+## [9.2.8](https://github.com/dao-xyz/peerbit/compare/shared-log-v9.2.7...shared-log-v9.2.8) (2024-10-21)
+
+
+### Bug Fixes
+
+* remove gid parent cache feature when exchanging heads ([5614dfb](https://github.com/dao-xyz/peerbit/commit/5614dfb0f292e2c5c71a07037cf95af05f9ab537))
+
+
+### Dependencies
+
+* The following workspace dependencies were updated
+  * dependencies
+    * @peerbit/program bumped from 5.0.5 to 5.0.6
+    * @peerbit/log bumped from 4.0.15 to 4.0.16
+    * @peerbit/rpc bumped from 5.0.13 to 5.0.14
+  * devDependencies
+    * @peerbit/test-utils bumped from ^2.1.3 to ^2.1.4
+
+## [9.2.7](https://github.com/dao-xyz/peerbit/compare/shared-log-v9.2.6...shared-log-v9.2.7) (2024-10-19)
+
+
+### Bug Fixes
+
+* re-check remote replicators on restart ([958fad7](https://github.com/dao-xyz/peerbit/commit/958fad7e7c5ef760275cbcfbbe6b1710f4f9448a))
+
+
+### Dependencies
+
+* The following workspace dependencies were updated
+  * dependencies
+    * @peerbit/program bumped from 5.0.4 to 5.0.5
+    * @peerbit/log bumped from 4.0.14 to 4.0.15
+    * @peerbit/rpc bumped from 5.0.12 to 5.0.13
+  * devDependencies
+    * @peerbit/test-utils bumped from ^2.1.2 to ^2.1.3
+
+## [9.2.6](https://github.com/dao-xyz/peerbit/compare/shared-log-v9.2.5...shared-log-v9.2.6) (2024-10-19)
+
+
+### Bug Fixes
+
+* dont throw on empty addReplicationRange updates ([01f2c90](https://github.com/dao-xyz/peerbit/commit/01f2c909265bd47444d63d8b926002ef78b50cef))
+
+## [9.2.5](https://github.com/dao-xyz/peerbit/compare/shared-log-v9.2.4...shared-log-v9.2.5) (2024-10-19)
+
+
+### Bug Fixes
+
+* export ReplicationRangeIndexable ([514afbe](https://github.com/dao-xyz/peerbit/commit/514afbe46bfcc719afc76145d0089574711f7e13))
+
+
+### Dependencies
+
+* The following workspace dependencies were updated
+  * dependencies
+    * @peerbit/log bumped from 4.0.13 to 4.0.14
+    * @peerbit/rpc bumped from 5.0.11 to 5.0.12
+  * devDependencies
+    * @peerbit/test-utils bumped from ^2.1.1 to ^2.1.2
+
+## [9.2.4](https://github.com/dao-xyz/peerbit/compare/shared-log-v9.2.3...shared-log-v9.2.4) (2024-10-16)
+
+
+### Bug Fixes
+
+* rn reload to reset ([8e56194](https://github.com/dao-xyz/peerbit/commit/8e56194fee25611071c38ec633cf47160a172bd6))
+
+
+### Dependencies
+
+* The following workspace dependencies were updated
+  * dependencies
+    * @peerbit/log bumped from 4.0.12 to 4.0.13
+
+## [9.2.3](https://github.com/dao-xyz/peerbit/compare/shared-log-v9.2.2...shared-log-v9.2.3) (2024-10-13)
+
+
+### Bug Fixes
+
+* add option to reset cache when rebalancing all ([21532c7](https://github.com/dao-xyz/peerbit/commit/21532c780b332777d5231611592501f1e285056f))
+* clear cache when rebalancing after each iteration ([30a09f9](https://github.com/dao-xyz/peerbit/commit/30a09f9263aa87ad42869484dde18fbd7a411b40))
+* make sure replicator join and leave events are emitted correctly ([a2cffec](https://github.com/dao-xyz/peerbit/commit/a2cffecc4c59906468c8cdb79dd0b9b4e67945d3))
+* update libp2p ([e5a3d3f](https://github.com/dao-xyz/peerbit/commit/e5a3d3f138e3ede880e4691a0ebb977e12d8fe98))
+
+
+### Dependencies
+
+* The following workspace dependencies were updated
+  * dependencies
+    * @peerbit/program bumped from 5.0.3 to 5.0.4
+    * @peerbit/log bumped from 4.0.11 to 4.0.12
+    * @peerbit/rpc bumped from 5.0.10 to 5.0.11
+  * devDependencies
+    * @peerbit/test-utils bumped from ^2.1.0 to ^2.1.1
+
+## [9.2.2](https://github.com/dao-xyz/peerbit/compare/shared-log-v9.2.1...shared-log-v9.2.2) (2024-10-12)
+
+
+### Bug Fixes
+
+* limit memory consumption when exchanging heads ([29dd1b8](https://github.com/dao-xyz/peerbit/commit/29dd1b871003ed14cd09ac9ab0dbbea69d121dc9))
+
+## [9.2.1](https://github.com/dao-xyz/peerbit/compare/shared-log-v9.2.0...shared-log-v9.2.1) (2024-10-11)
+
+
+### Bug Fixes
+
+* reduce batch sizes when rebalancing ([0b8baa8](https://github.com/dao-xyz/peerbit/commit/0b8baa87b7e0d2f145b276944ff869bbfd1e02ea))
+
+## [9.2.0](https://github.com/dao-xyz/peerbit/compare/shared-log-v9.1.2...shared-log-v9.2.0) (2024-10-11)
+
+
+### Features
+
+* efficient replication rebalancing with head indexes ([41bb417](https://github.com/dao-xyz/peerbit/commit/41bb417dbe2e817ca5504131ea768a9ad2e655c0))
+
+
+### Dependencies
+
+* The following workspace dependencies were updated
+  * dependencies
+    * @peerbit/program bumped from 5.0.2 to 5.0.3
+    * @peerbit/log bumped from 4.0.10 to 4.0.11
+    * @peerbit/rpc bumped from 5.0.9 to 5.0.10
+  * devDependencies
+    * @peerbit/test-utils bumped from ^2.0.43 to ^2.1.0
+
+## [9.1.2](https://github.com/dao-xyz/peerbit/compare/shared-log-v9.1.1...shared-log-v9.1.2) (2024-09-26)
+
+
+### Dependencies
+
+* The following workspace dependencies were updated
+  * dependencies
+    * @peerbit/log bumped from 4.0.9 to 4.0.10
+    * @peerbit/rpc bumped from 5.0.8 to 5.0.9
+  * devDependencies
+    * @peerbit/test-utils bumped from ^2.0.42 to ^2.0.43
+
+## [9.1.1](https://github.com/dao-xyz/peerbit/compare/shared-log-v9.1.0...shared-log-v9.1.1) (2024-09-01)
+
+
+### Bug Fixes
+
+* add eager option for searching remote ([57b8640](https://github.com/dao-xyz/peerbit/commit/57b8640ee53a25d81695f7175ca6747aa9dfe58a))
+
+
+### Dependencies
+
+* The following workspace dependencies were updated
+  * dependencies
+    * @peerbit/program bumped from 5.0.1 to 5.0.2
+    * @peerbit/log bumped from 4.0.8 to 4.0.9
+    * @peerbit/rpc bumped from 5.0.7 to 5.0.8
+  * devDependencies
+    * @peerbit/test-utils bumped from ^2.0.41 to ^2.0.42
+
 ## [9.1.0](https://github.com/dao-xyz/peerbit/compare/shared-log-v9.0.10...shared-log-v9.1.0) (2024-08-25)
 
 

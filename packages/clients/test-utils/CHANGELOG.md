@@ -400,6 +400,129 @@
   * dependencies
     * peerbit bumped from 4.0.6 to 4.0.7
 
+## [2.1.9](https://github.com/dao-xyz/peerbit/compare/test-utils-v2.1.8...test-utils-v2.1.9) (2024-11-08)
+
+
+### Dependencies
+
+* The following workspace dependencies were updated
+  * dependencies
+    * peerbit bumped from 4.0.26 to 4.0.27
+
+## [2.1.8](https://github.com/dao-xyz/peerbit/compare/test-utils-v2.1.7...test-utils-v2.1.8) (2024-11-07)
+
+
+### Dependencies
+
+* The following workspace dependencies were updated
+  * dependencies
+    * peerbit bumped from 4.0.25 to 4.0.26
+
+## [2.1.7](https://github.com/dao-xyz/peerbit/compare/test-utils-v2.1.6...test-utils-v2.1.7) (2024-10-28)
+
+
+### Dependencies
+
+* The following workspace dependencies were updated
+  * dependencies
+    * @peerbit/libp2p-test-utils bumped from 2.1.8 to 2.1.9
+    * peerbit bumped from 4.0.24 to 4.0.25
+
+## [2.1.6](https://github.com/dao-xyz/peerbit/compare/test-utils-v2.1.5...test-utils-v2.1.6) (2024-10-28)
+
+
+### Dependencies
+
+* The following workspace dependencies were updated
+  * dependencies
+    * peerbit bumped from 4.0.23 to 4.0.24
+
+## [2.1.5](https://github.com/dao-xyz/peerbit/compare/test-utils-v2.1.4...test-utils-v2.1.5) (2024-10-28)
+
+
+### Dependencies
+
+* The following workspace dependencies were updated
+  * dependencies
+    * @peerbit/libp2p-test-utils bumped from 2.1.7 to 2.1.8
+    * peerbit bumped from 4.0.22 to 4.0.23
+
+## [2.1.4](https://github.com/dao-xyz/peerbit/compare/test-utils-v2.1.3...test-utils-v2.1.4) (2024-10-21)
+
+
+### Dependencies
+
+* The following workspace dependencies were updated
+  * dependencies
+    * peerbit bumped from 4.0.21 to 4.0.22
+
+## [2.1.3](https://github.com/dao-xyz/peerbit/compare/test-utils-v2.1.2...test-utils-v2.1.3) (2024-10-19)
+
+
+### Dependencies
+
+* The following workspace dependencies were updated
+  * dependencies
+    * peerbit bumped from 4.0.20 to 4.0.21
+
+## [2.1.2](https://github.com/dao-xyz/peerbit/compare/test-utils-v2.1.1...test-utils-v2.1.2) (2024-10-19)
+
+
+### Dependencies
+
+* The following workspace dependencies were updated
+  * dependencies
+    * peerbit bumped from 4.0.19 to 4.0.20
+
+## [2.1.1](https://github.com/dao-xyz/peerbit/compare/test-utils-v2.1.0...test-utils-v2.1.1) (2024-10-13)
+
+
+### Dependencies
+
+* The following workspace dependencies were updated
+  * dependencies
+    * @peerbit/libp2p-test-utils bumped from 2.1.6 to 2.1.7
+    * peerbit bumped from 4.0.18 to 4.0.19
+
+## [2.1.0](https://github.com/dao-xyz/peerbit/compare/test-utils-v2.0.43...test-utils-v2.1.0) (2024-10-11)
+
+
+### Features
+
+* logging utils ([f111db5](https://github.com/dao-xyz/peerbit/commit/f111db548820d47338c4a39d5750dded7117dc2a))
+
+
+### Bug Fixes
+
+* disable connectionMonitor ([60f4d9c](https://github.com/dao-xyz/peerbit/commit/60f4d9c19184cf17d8d5c5ad014164d5534d1f81))
+
+
+### Dependencies
+
+* The following workspace dependencies were updated
+  * dependencies
+    * @peerbit/libp2p-test-utils bumped from 2.1.5 to 2.1.6
+    * peerbit bumped from 4.0.17 to 4.0.18
+
+## [2.0.43](https://github.com/dao-xyz/peerbit/compare/test-utils-v2.0.42...test-utils-v2.0.43) (2024-09-26)
+
+
+### Dependencies
+
+* The following workspace dependencies were updated
+  * dependencies
+    * peerbit bumped from 4.0.16 to 4.0.17
+
+## [2.0.42](https://github.com/dao-xyz/peerbit/compare/test-utils-v2.0.41...test-utils-v2.0.42) (2024-09-01)
+
+
+### Dependencies
+
+* The following workspace dependencies were updated
+  * dependencies
+    * @peerbit/libp2p-test-utils bumped from 2.1.4 to 2.1.5
+    * peerbit bumped from 4.0.15 to 4.0.16
+
 ## [2.0.41](https://github.com/dao-xyz/peerbit/compare/test-utils-v2.0.40...test-utils-v2.0.41) (2024-08-12)
 
 

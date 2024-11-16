@@ -1,5 +1,57 @@
 # Changelog
 
+## [1.0.8](https://github.com/dao-xyz/peerbit/compare/document-interface-v1.0.7...document-interface-v1.0.8) (2024-11-08)
+
+
+### Dependencies
+
+* The following workspace dependencies were updated
+  * dependencies
+    * @peerbit/indexer-interface bumped from ^2.0.0 to ^2.0.1
+
+## [1.0.7](https://github.com/dao-xyz/peerbit/compare/document-interface-v1.0.6...document-interface-v1.0.7) (2024-11-07)
+
+
+### Dependencies
+
+* The following workspace dependencies were updated
+  * dependencies
+    * @peerbit/indexer-interface bumped from ^1.1.1 to ^2.0.0
+
+## [1.0.6](https://github.com/dao-xyz/peerbit/compare/document-interface-v1.0.5...document-interface-v1.0.6) (2024-10-19)
+
+
+### Dependencies
+
+* The following workspace dependencies were updated
+  * dependencies
+    * @peerbit/indexer-interface bumped from ^1.1.0 to ^1.1.1
+
+## [1.0.5](https://github.com/dao-xyz/peerbit/compare/document-interface-v1.0.4...document-interface-v1.0.5) (2024-10-11)
+
+
+### Bug Fixes
+
+* update for new iterator types ([c4f93a1](https://github.com/dao-xyz/peerbit/commit/c4f93a16a6456af8320995b189ae2f161d413814))
+
+
+### Dependencies
+
+* The following workspace dependencies were updated
+  * dependencies
+    * @peerbit/crypto bumped from ^2.3.1 to ^2.3.2
+    * @peerbit/indexer-interface bumped from ^1.0.3 to ^1.1.0
+
+## [1.0.4](https://github.com/dao-xyz/peerbit/compare/document-interface-v1.0.3...document-interface-v1.0.4) (2024-09-01)
+
+
+### Dependencies
+
+* The following workspace dependencies were updated
+  * dependencies
+    * @peerbit/crypto bumped from ^2.3.0 to ^2.3.1
+    * @peerbit/indexer-interface bumped from ^1.0.2 to ^1.0.3
+
 ## [1.0.3](https://github.com/dao-xyz/peerbit/compare/document-interface-v1.0.2...document-interface-v1.0.3) (2024-08-13)
 
 

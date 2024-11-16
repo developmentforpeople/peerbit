@@ -2,6 +2,7 @@ import { Ed25519Keypair } from "@peerbit/crypto";
 import { TestSession } from "@peerbit/test-utils";
 import assert from "assert";
 import { expect } from "chai";
+import sinon from "sinon";
 import { compare } from "uint8arrays";
 import { createEntry } from "../src/entry-create.js";
 import { EntryType } from "../src/entry-type.js";
@@ -367,7 +368,7 @@ describe("join", function () {
 
 				// We need to store a1 somewhere else, becuse log1 will temporarely delete the block since due to the merge order
 				// TODO make this work even though there is not a third party helping
-				await log2.blocks.get(a1.hash, { replicate: true });
+				await log2.blocks.get(a1.hash, { remote: { replicate: true } });
 				expect(await log2.blocks.get(a1.hash)).to.exist;
 				await log1.join([b1, b2]);
 				expect((await log1.toArray()).map((e) => e.hash)).to.deep.equal([
@@ -402,7 +403,7 @@ describe("join", function () {
 
 				// We need to store a1 somewhere else, becuse log1 will temporarely delete the block since due to the merge order
 				// TODO make this work even though there is not a third party helping
-				await log2.blocks.get(a1.hash, { replicate: true });
+				await log2.blocks.get(a1.hash, { remote: { replicate: true } });
 				expect(await log2.blocks.get(a1.hash)).to.exist;
 				await log1.join([b1, b2]);
 				expect((await log1.toArray()).map((e) => e.hash)).to.have.members([
@@ -523,6 +524,9 @@ describe("join", function () {
 			let joinCount = 1e3;
 			let entry = (await log2.append(new Uint8Array([0]))).entry;
 			let promises: Promise<any>[] = [];
+
+			const fn = sinon.spy(log1.entryIndex, "getHeads");
+
 			for (let i = 0; i < joinCount; i++) {
 				promises.push(log1.join([entry]));
 			}
@@ -531,6 +535,25 @@ describe("join", function () {
 			const arr = await log1.toArray();
 			expect(arr.length).equal(1);
 			expect(log1.length).equal(1);
+			expect(fn.callCount).to.equal(1);
+		});
+
+		it("joins same sequence of entries concurrently", async () => {
+			let entry1 = (await log2.append(new Uint8Array([0]))).entry;
+			let entry2 = (await log2.append(new Uint8Array([0]))).entry;
+
+			let promises: Promise<any>[] = [];
+
+			const getFn = sinon.spy(log1.blocks, "get");
+
+			promises.push(log1.join([entry1]));
+			promises.push(log1.join([entry2]));
+
+			await Promise.all(promises);
+			const arr = await log1.toArray();
+			expect(arr.length).equal(2);
+			expect(log1.length).equal(2);
+			expect(getFn.callCount).to.equal(0);
 		});
 
 		it("joins with extra references", async () => {

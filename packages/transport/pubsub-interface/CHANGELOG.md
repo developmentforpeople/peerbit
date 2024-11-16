@@ -108,6 +108,49 @@
     * @peerbit/crypto bumped from 2.1.7 to 2.2.0
     * @peerbit/stream-interface bumped from ^5.0.1 to ^5.0.2
 
+## [3.1.1](https://github.com/dao-xyz/peerbit/compare/pubsub-interface-v3.1.0...pubsub-interface-v3.1.1) (2024-10-28)
+
+
+### Dependencies
+
+* The following workspace dependencies were updated
+  * dependencies
+    * @peerbit/stream-interface bumped from ^5.1.0 to ^5.1.1
+
+## [3.1.0](https://github.com/dao-xyz/peerbit/compare/pubsub-interface-v3.0.6...pubsub-interface-v3.1.0) (2024-10-19)
+
+
+### Features
+
+* add method for resolving publickey from hash ([8ec159b](https://github.com/dao-xyz/peerbit/commit/8ec159b3df85eb5cf6aad57181c4b425e147872a))
+
+
+### Dependencies
+
+* The following workspace dependencies were updated
+  * dependencies
+    * @peerbit/stream-interface bumped from ^5.0.5 to ^5.1.0
+
+## [3.0.6](https://github.com/dao-xyz/peerbit/compare/pubsub-interface-v3.0.5...pubsub-interface-v3.0.6) (2024-10-11)
+
+
+### Dependencies
+
+* The following workspace dependencies were updated
+  * dependencies
+    * @peerbit/crypto bumped from 2.3.1 to 2.3.2
+    * @peerbit/stream-interface bumped from ^5.0.4 to ^5.0.5
+
+## [3.0.5](https://github.com/dao-xyz/peerbit/compare/pubsub-interface-v3.0.4...pubsub-interface-v3.0.5) (2024-09-01)
+
+
+### Dependencies
+
+* The following workspace dependencies were updated
+  * dependencies
+    * @peerbit/crypto bumped from 2.3.0 to 2.3.1
+    * @peerbit/stream-interface bumped from ^5.0.3 to ^5.0.4
+
 ## [3.0.4](https://github.com/dao-xyz/peerbit/compare/pubsub-interface-v3.0.3...pubsub-interface-v3.0.4) (2024-07-20)
 
 

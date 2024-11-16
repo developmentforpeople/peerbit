@@ -19,9 +19,15 @@ export * from "./messages.js";
 
 export interface WaitForPeer {
 	waitFor(
-		peer: PeerId | PublicSignKey,
+		peer: PeerId | PublicSignKey | string,
 		options?: { signal?: AbortSignal },
 	): Promise<void>;
+}
+
+export interface PublicKeyFromHashResolver {
+	getPublicKey(
+		hash: string,
+	): PublicSignKey | undefined | Promise<PublicSignKey | undefined>;
 }
 
 export class NotStartedError extends Error {

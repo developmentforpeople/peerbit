@@ -1,5 +1,5 @@
 import { TestSession } from "@peerbit/libp2p-test-utils";
-import { waitForPeers } from "@peerbit/stream";
+import { waitForNeighbour } from "@peerbit/stream";
 import { delay } from "@peerbit/time";
 import { expect } from "chai";
 import sinon from "sinon";
@@ -45,14 +45,14 @@ describe("transport", function () {
 			[session.peers[1], session.peers[2]],
 		]);
 
-		await waitForPeers(store(session, 0), store(session, 1));
-		await waitForPeers(store(session, 1), store(session, 2));
+		await waitForNeighbour(store(session, 0), store(session, 1));
+		await waitForNeighbour(store(session, 1), store(session, 2));
 
 		const data = new Uint8Array([5, 4, 3]);
 		const cid = await store(session, 0).put(data);
 
 		expect(cid).equal("zb2rhbnwihVzMMEGAPf9EwTZBsQz9fszCnM4Y8mJmBFgiyN7J");
-		const readData = await store(session, 2).get(cid);
+		const readData = await store(session, 2).get(cid, { remote: true });
 		expect(new Uint8Array(readData!)).to.deep.equal(data);
 	});
 
@@ -67,13 +67,15 @@ describe("transport", function () {
 
 		await session.connect([[session.peers[0], session.peers[1]]]);
 
-		await waitForPeers(store(session, 0), store(session, 1));
+		await waitForNeighbour(store(session, 0), store(session, 1));
 
 		const data = new Uint8Array([5, 4, 3]);
 		const cid = await store(session, 0).put(data);
 		expect(cid).equal("zb2rhbnwihVzMMEGAPf9EwTZBsQz9fszCnM4Y8mJmBFgiyN7J");
 
-		const readDataPromise = store(session, 2).get(cid, { timeout: 5000 });
+		const readDataPromise = store(session, 2).get(cid, {
+			remote: { timeout: 5000 },
+		});
 		await delay(1000);
 		await session.connect([[session.peers[1], session.peers[2]]]);
 
@@ -90,7 +92,7 @@ describe("transport", function () {
 		await store(session, 0).start();
 		await store(session, 1).start();
 
-		await waitForPeers(store(session, 0), store(session, 1));
+		await waitForNeighbour(store(session, 0), store(session, 1));
 
 		const data = new Uint8Array([5, 4, 3]);
 		const cid = await store(session, 0).put(data);
@@ -103,7 +105,7 @@ describe("transport", function () {
 
 		const promises: Promise<any>[] = [];
 		for (let i = 0; i < 100; i++) {
-			promises.push(store(session, 1).get(cid));
+			promises.push(store(session, 1).get(cid, { remote: true }));
 		}
 		const resolved = await Promise.all(promises);
 		expect(publish.calledOnce).to.be.true;
@@ -122,11 +124,11 @@ describe("transport", function () {
 
 		expect(cid).equal("zb2rhbnwihVzMMEGAPf9EwTZBsQz9fszCnM4Y8mJmBFgiyN7J");
 		const readDataPromise = store(session, 1).get(cid, {
-			from: [session.peers[0].services.blocks.publicKey.hashcode()],
+			remote: { from: [session.peers[0].services.blocks.publicKey.hashcode()] },
 		});
 
 		await session.connect(); // we connect after get request is sent
-		await waitForPeers(store(session, 0), store(session, 1));
+		await waitForNeighbour(store(session, 0), store(session, 1));
 
 		expect(new Uint8Array((await readDataPromise)!)).to.deep.equal(data);
 	});
@@ -140,10 +142,10 @@ describe("transport", function () {
 		const cid = await store(session, 0).put(data);
 
 		expect(cid).equal("zb2rhbnwihVzMMEGAPf9EwTZBsQz9fszCnM4Y8mJmBFgiyN7J");
-		const readDataPromise = store(session, 1).get(cid);
+		const readDataPromise = store(session, 1).get(cid, { remote: true });
 
 		await session.connect(); // we connect after get request is sent
-		await waitForPeers(store(session, 0), store(session, 1));
+		await waitForNeighbour(store(session, 0), store(session, 1));
 
 		expect(new Uint8Array((await readDataPromise)!)).to.deep.equal(data);
 	});
@@ -152,12 +154,12 @@ describe("transport", function () {
 		session = await TestSession.connected(2, {
 			services: { blocks: (c) => new DirectBlock(c) },
 		});
-		await waitForPeers(store(session, 0), store(session, 1));
+		await waitForNeighbour(store(session, 0), store(session, 1));
 
 		const t1 = +new Date();
 		const readData = await store(session, 0).get(
 			"zb3we1BmfxpFg6bCXmrsuEo8JuQrGEf7RyFBdRxEHLuqc4CSr",
-			{ timeout: 3000 },
+			{ remote: { timeout: 3000 } },
 		);
 		const t2 = +new Date();
 		expect(readData).equal(undefined);

@@ -1,6 +1,6 @@
 import { field, variant } from "@dao-xyz/borsh";
 import type { PeerId } from "@libp2p/interface";
-import { CustomEvent, TypedEventEmitter } from "@libp2p/interface";
+import { TypedEventEmitter } from "@libp2p/interface";
 import {
 	type GetOptions,
 	type Blocks as IBlocks,
@@ -123,9 +123,12 @@ export class RemoteBlocks implements IBlocks {
 
 		if (!value) {
 			// try to get it remotelly
-			value = await this._readFromPeers(cid, cidObject, options);
-			if (options?.replicate && value) {
-				this.localStore!.put(value);
+			let remoteOptions = options?.remote === true ? {} : options?.remote;
+			if (remoteOptions) {
+				value = await this._readFromPeers(cid, cidObject, remoteOptions);
+				if (remoteOptions?.replicate && value) {
+					await this.localStore!.put(value);
+				}
 			}
 		}
 		return value;
@@ -163,7 +166,9 @@ export class RemoteBlocks implements IBlocks {
 	) {
 		const cid = stringifyCid(request.cid);
 		const bytes = await this.localStore.get(cid, {
-			timeout: localTimeout,
+			remote: {
+				timeout: localTimeout,
+			},
 		});
 		if (!bytes) {
 			return;

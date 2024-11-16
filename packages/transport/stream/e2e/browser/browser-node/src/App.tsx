@@ -1,5 +1,5 @@
+import { noise } from "@chainsafe/libp2p-noise";
 import { yamux } from "@chainsafe/libp2p-yamux";
-import { noise } from "@dao-xyz/libp2p-noise";
 import { circuitRelayTransport } from "@libp2p/circuit-relay-v2";
 import { identify } from "@libp2p/identify";
 import { webRTC } from "@libp2p/webrtc";
@@ -23,17 +23,16 @@ const client = await createLibp2p<{ stream: TestDirectStream; identify: any }>({
 	},
 	transports: [
 		circuitRelayTransport({
-			discoverRelays: 1,
 			reservationCompletionTimeout: 5000,
 		}),
 		webRTC(),
 		webSockets({ filter: all }),
 	],
 	addresses: {
-		listen: ["/webrtc"],
+		listen: ["/webrtc", "/p2p-circuit"],
 	},
 	streamMuxers: [yamux()],
-	connectionEncryption: [noise()],
+	connectionEncrypters: [noise()],
 });
 let receivedData = 0;
 

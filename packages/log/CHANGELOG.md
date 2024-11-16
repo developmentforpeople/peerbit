@@ -368,6 +368,181 @@
   * devDependencies
     * @peerbit/test-utils bumped from 2.0.32 to 2.0.33
 
+## [4.0.21](https://github.com/dao-xyz/peerbit/compare/log-v4.0.20...log-v4.0.21) (2024-11-08)
+
+
+### Dependencies
+
+* The following workspace dependencies were updated
+  * dependencies
+    * @peerbit/indexer-interface bumped from ^2.0.0 to ^2.0.1
+    * @peerbit/indexer-simple bumped from ^1.1.2 to ^1.1.3
+  * devDependencies
+    * @peerbit/test-utils bumped from 2.1.8 to 2.1.9
+
+## [4.0.20](https://github.com/dao-xyz/peerbit/compare/log-v4.0.19...log-v4.0.20) (2024-11-07)
+
+
+### Dependencies
+
+* The following workspace dependencies were updated
+  * dependencies
+    * @peerbit/indexer-interface bumped from ^1.1.1 to ^2.0.0
+    * @peerbit/indexer-simple bumped from ^1.1.1 to ^1.1.2
+  * devDependencies
+    * @peerbit/test-utils bumped from 2.1.7 to 2.1.8
+
+## [4.0.19](https://github.com/dao-xyz/peerbit/compare/log-v4.0.18...log-v4.0.19) (2024-10-28)
+
+
+### Bug Fixes
+
+* update libp2p ([c679a0d](https://github.com/dao-xyz/peerbit/commit/c679a0df22e2c2927421f16ff7ddd061e514a28a))
+
+
+### Dependencies
+
+* The following workspace dependencies were updated
+  * dependencies
+    * @peerbit/blocks-interface bumped from ^1.3.6 to ^1.3.7
+  * devDependencies
+    * @peerbit/test-utils bumped from 2.1.6 to 2.1.7
+
+## [4.0.18](https://github.com/dao-xyz/peerbit/compare/log-v4.0.17...log-v4.0.18) (2024-10-28)
+
+
+### Dependencies
+
+* The following workspace dependencies were updated
+  * devDependencies
+    * @peerbit/test-utils bumped from 2.1.5 to 2.1.6
+
+## [4.0.17](https://github.com/dao-xyz/peerbit/compare/log-v4.0.16...log-v4.0.17) (2024-10-28)
+
+
+### Bug Fixes
+
+* update libp2p ([c577601](https://github.com/dao-xyz/peerbit/commit/c577601f95d1db6de37a40c5367806ad6dbe15f7))
+
+
+### Dependencies
+
+* The following workspace dependencies were updated
+  * dependencies
+    * @peerbit/blocks-interface bumped from ^1.3.5 to ^1.3.6
+  * devDependencies
+    * @peerbit/test-utils bumped from 2.1.4 to 2.1.5
+
+## [4.0.16](https://github.com/dao-xyz/peerbit/compare/log-v4.0.15...log-v4.0.16) (2024-10-21)
+
+
+### Bug Fixes
+
+* prevent resolving blocks from remote by default ([a9702cf](https://github.com/dao-xyz/peerbit/commit/a9702cfb813f011771b68501872a64701f4e7bd4))
+
+
+### Dependencies
+
+* The following workspace dependencies were updated
+  * dependencies
+    * @peerbit/blocks-interface bumped from ^1.3.4 to ^1.3.5
+  * devDependencies
+    * @peerbit/test-utils bumped from 2.1.3 to 2.1.4
+
+## [4.0.15](https://github.com/dao-xyz/peerbit/compare/log-v4.0.14...log-v4.0.15) (2024-10-19)
+
+
+### Dependencies
+
+* The following workspace dependencies were updated
+  * dependencies
+    * @peerbit/blocks-interface bumped from ^1.3.3 to ^1.3.4
+  * devDependencies
+    * @peerbit/test-utils bumped from 2.1.2 to 2.1.3
+
+## [4.0.14](https://github.com/dao-xyz/peerbit/compare/log-v4.0.13...log-v4.0.14) (2024-10-19)
+
+
+### Dependencies
+
+* The following workspace dependencies were updated
+  * dependencies
+    * @peerbit/indexer-interface bumped from ^1.1.0 to ^1.1.1
+    * @peerbit/indexer-simple bumped from ^1.1.0 to ^1.1.1
+  * devDependencies
+    * @peerbit/test-utils bumped from 2.1.1 to 2.1.2
+
+## [4.0.13](https://github.com/dao-xyz/peerbit/compare/log-v4.0.12...log-v4.0.13) (2024-10-16)
+
+
+### Bug Fixes
+
+* make reset to consider already added entries ([db0134c](https://github.com/dao-xyz/peerbit/commit/db0134c4381417a9fc45dcef64c97c25985c089b))
+
+## [4.0.12](https://github.com/dao-xyz/peerbit/compare/log-v4.0.11...log-v4.0.12) (2024-10-13)
+
+
+### Bug Fixes
+
+* update libp2p ([e5a3d3f](https://github.com/dao-xyz/peerbit/commit/e5a3d3f138e3ede880e4691a0ebb977e12d8fe98))
+
+
+### Dependencies
+
+* The following workspace dependencies were updated
+  * dependencies
+    * @peerbit/blocks-interface bumped from ^1.3.2 to ^1.3.3
+  * devDependencies
+    * @peerbit/test-utils bumped from 2.1.0 to 2.1.1
+
+## [4.0.11](https://github.com/dao-xyz/peerbit/compare/log-v4.0.10...log-v4.0.11) (2024-10-11)
+
+
+### Bug Fixes
+
+* update for new iterator types ([c4f93a1](https://github.com/dao-xyz/peerbit/commit/c4f93a16a6456af8320995b189ae2f161d413814))
+* update libp2p ([946a904](https://github.com/dao-xyz/peerbit/commit/946a904ea6cade2bf3de47f014a3fb96ed99e727))
+
+
+### Dependencies
+
+* The following workspace dependencies were updated
+  * dependencies
+    * @peerbit/blocks-interface bumped from ^1.3.1 to ^1.3.2
+    * @peerbit/crypto bumped from 2.3.1 to 2.3.2
+    * @peerbit/indexer-interface bumped from ^1.0.3 to ^1.1.0
+    * @peerbit/indexer-simple bumped from ^1.0.4 to ^1.1.0
+  * devDependencies
+    * @peerbit/test-utils bumped from 2.0.43 to 2.1.0
+
+## [4.0.10](https://github.com/dao-xyz/peerbit/compare/log-v4.0.9...log-v4.0.10) (2024-09-26)
+
+
+### Dependencies
+
+* The following workspace dependencies were updated
+  * devDependencies
+    * @peerbit/test-utils bumped from 2.0.42 to 2.0.43
+
+## [4.0.9](https://github.com/dao-xyz/peerbit/compare/log-v4.0.8...log-v4.0.9) (2024-09-01)
+
+
+### Bug Fixes
+
+* bump libp2p ([b064d22](https://github.com/dao-xyz/peerbit/commit/b064d228eaf7da2ef9da3dff95616dc00a31d9de))
+
+
+### Dependencies
+
+* The following workspace dependencies were updated
+  * dependencies
+    * @peerbit/blocks-interface bumped from ^1.3.0 to ^1.3.1
+    * @peerbit/crypto bumped from 2.3.0 to 2.3.1
+    * @peerbit/indexer-interface bumped from ^1.0.2 to ^1.0.3
+    * @peerbit/indexer-simple bumped from ^1.0.3 to ^1.0.4
+  * devDependencies
+    * @peerbit/test-utils bumped from 2.0.41 to 2.0.42
+
 ## [4.0.8](https://github.com/dao-xyz/peerbit/compare/log-v4.0.7...log-v4.0.8) (2024-08-25)
 
 

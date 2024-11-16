@@ -1,5 +1,5 @@
 import { deserialize, field, option, variant, vec } from "@dao-xyz/borsh";
-import { CustomEvent, type PeerId } from "@libp2p/interface";
+import { type PeerId } from "@libp2p/interface";
 import { PublicSignKey, getPublicKeyFromPeerId } from "@peerbit/crypto";
 import {
 	DataEvent,
@@ -128,15 +128,17 @@ export class RESP_Unsubscribe extends PubSubMessage {
 
 @variant(10)
 export class REQ_PubsubWaitFor extends PubSubMessage {
-	@field({ type: PublicSignKey })
-	publicKey: PublicSignKey;
+	@field({ type: "string" })
+	hash: string;
 
-	constructor(publicKey: PeerId | PublicSignKey) {
+	constructor(publicKey: PeerId | PublicSignKey | string) {
 		super();
-		this.publicKey =
-			publicKey instanceof PublicSignKey
+		this.hash =
+			typeof publicKey === "string"
 				? publicKey
-				: getPublicKeyFromPeerId(publicKey);
+				: publicKey instanceof PublicSignKey
+					? publicKey.hashcode()
+					: getPublicKeyFromPeerId(publicKey).hashcode();
 	}
 }
 
@@ -212,6 +214,28 @@ export class RESP_DispatchEvent extends PubSubMessage {
 	constructor(value: boolean) {
 		super();
 		this.value = value;
+	}
+}
+
+@variant(19)
+export class REQ_GetPublicKey extends PubSubMessage {
+	@field({ type: "string" })
+	hash: string;
+
+	constructor(hash: string) {
+		super();
+		this.hash = hash;
+	}
+}
+
+@variant(20)
+export class RESP_GetPublicKey extends PubSubMessage {
+	@field({ type: option(PublicSignKey) })
+	publicKey?: PublicSignKey;
+
+	constructor(publicKey?: PublicSignKey) {
+		super();
+		this.publicKey = publicKey;
 	}
 }
 

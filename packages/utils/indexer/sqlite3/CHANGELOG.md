@@ -1,5 +1,89 @@
 # Changelog
 
+## [1.1.4](https://github.com/dao-xyz/peerbit/compare/indexer-sqlite3-v1.1.3...indexer-sqlite3-v1.1.4) (2024-11-08)
+
+
+### Bug Fixes
+
+* revert i64  -&gt; u64 shifting changes ([4d7d8ba](https://github.com/dao-xyz/peerbit/commit/4d7d8ba0a90e147ed1c8bffbf55219db521dc853))
+
+
+### Dependencies
+
+* The following workspace dependencies were updated
+  * dependencies
+    * @peerbit/indexer-interface bumped from ^2.0.0 to ^2.0.1
+  * devDependencies
+    * @peerbit/indexer-tests bumped from ^1.1.2 to ^1.1.3
+
+## [1.1.3](https://github.com/dao-xyz/peerbit/compare/indexer-sqlite3-v1.1.2...indexer-sqlite3-v1.1.3) (2024-11-07)
+
+
+### Bug Fixes
+
+* apply default sorting to make iterators stable ([d6b4d16](https://github.com/dao-xyz/peerbit/commit/d6b4d1642ff30b0e40065397349f0f7bd0600aa5))
+
+
+### Dependencies
+
+* The following workspace dependencies were updated
+  * dependencies
+    * @peerbit/indexer-interface bumped from ^1.1.1 to ^2.0.0
+  * devDependencies
+    * @peerbit/indexer-tests bumped from ^1.1.1 to ^1.1.2
+
+## [1.1.2](https://github.com/dao-xyz/peerbit/compare/indexer-sqlite3-v1.1.1...indexer-sqlite3-v1.1.2) (2024-10-28)
+
+
+### Bug Fixes
+
+* update sqlite ([9aa0186](https://github.com/dao-xyz/peerbit/commit/9aa018610e2c9d49680173a7be430d7e4e2a03d2))
+
+## [1.1.1](https://github.com/dao-xyz/peerbit/compare/indexer-sqlite3-v1.1.0...indexer-sqlite3-v1.1.1) (2024-10-19)
+
+
+### Dependencies
+
+* The following workspace dependencies were updated
+  * dependencies
+    * @peerbit/indexer-interface bumped from ^1.1.0 to ^1.1.1
+  * devDependencies
+    * @peerbit/indexer-tests bumped from ^1.1.0 to ^1.1.1
+
+## [1.1.0](https://github.com/dao-xyz/peerbit/compare/indexer-sqlite3-v1.0.7...indexer-sqlite3-v1.1.0) (2024-10-11)
+
+
+### Features
+
+* skip calculating iterator sizes on next calls ([a87469d](https://github.com/dao-xyz/peerbit/commit/a87469d4cadb8b8ec988e609ea39f97e40033c4e))
+
+
+### Dependencies
+
+* The following workspace dependencies were updated
+  * dependencies
+    * @peerbit/indexer-interface bumped from ^1.0.3 to ^1.1.0
+  * devDependencies
+    * @peerbit/indexer-tests bumped from ^1.0.4 to ^1.1.0
+
+## [1.0.7](https://github.com/dao-xyz/peerbit/compare/indexer-sqlite3-v1.0.6...indexer-sqlite3-v1.0.7) (2024-09-26)
+
+
+### Bug Fixes
+
+* update sqlite3 dependency version ([88f45c3](https://github.com/dao-xyz/peerbit/commit/88f45c3da090ad6ed05b43479e4695fc6b6c8e3c))
+
+## [1.0.6](https://github.com/dao-xyz/peerbit/compare/indexer-sqlite3-v1.0.5...indexer-sqlite3-v1.0.6) (2024-09-01)
+
+
+### Dependencies
+
+* The following workspace dependencies were updated
+  * dependencies
+    * @peerbit/indexer-interface bumped from ^1.0.2 to ^1.0.3
+  * devDependencies
+    * @peerbit/indexer-tests bumped from ^1.0.3 to ^1.0.4
+
 ## [1.0.5](https://github.com/dao-xyz/peerbit/compare/indexer-sqlite3-v1.0.4...indexer-sqlite3-v1.0.5) (2024-08-12)
 
 

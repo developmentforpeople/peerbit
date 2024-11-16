@@ -1,6 +1,5 @@
 import { type AbstractType, deserialize, serialize } from "@dao-xyz/borsh";
 import { type PeerId } from "@libp2p/interface";
-import { CustomEvent } from "@libp2p/interface";
 import { type Multiaddr } from "@multiformats/multiaddr";
 import { type AnyStore } from "@peerbit/any-store-interface";
 import { type Blocks } from "@peerbit/blocks-interface";
@@ -320,7 +319,7 @@ export class PeerbitProxyHost implements ProgramClient {
 					);
 				}
 			} else if (message instanceof blocks.REQ_BlockWaitFor) {
-				await this.services.blocks.waitFor(message.publicKey);
+				await this.services.blocks.waitFor(message.hash);
 				await this.respond(message, new blocks.RESP_BlockWaitFor(), from);
 			} else if (message instanceof blocks.REQ_BlockSize) {
 				await this.respond(
@@ -333,8 +332,7 @@ export class PeerbitProxyHost implements ProgramClient {
 					message,
 					new blocks.RESP_GetBlock(
 						await this.services.blocks.get(message.cid, {
-							replicate: message.replicate,
-							timeout: message.timeout,
+							remote: message.remote,
 						}),
 					),
 					from,
@@ -483,7 +481,7 @@ export class PeerbitProxyHost implements ProgramClient {
 					from,
 				); // TODO types));
 			} else if (message instanceof pubsub.REQ_PubsubWaitFor) {
-				await this.services.pubsub.waitFor(message.publicKey);
+				await this.services.pubsub.waitFor(message.hash);
 				await this.respond(message, new pubsub.RESP_PubsubWaitFor(), from);
 			} else if (message instanceof pubsub.REQ_RequestSubscribers) {
 				await this.services.pubsub.requestSubscribers(message.topic);
@@ -509,6 +507,14 @@ export class PeerbitProxyHost implements ProgramClient {
 							force: message.force,
 							data: message.data,
 						}),
+					),
+					from,
+				);
+			} else if (message instanceof pubsub.REQ_GetPublicKey) {
+				await this.respond(
+					message,
+					new pubsub.RESP_GetPublicKey(
+						await this.services.pubsub.getPublicKey(message.hash),
 					),
 					from,
 				);

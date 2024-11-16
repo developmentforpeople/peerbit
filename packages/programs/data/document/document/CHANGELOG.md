@@ -456,6 +456,225 @@
   * devDependencies
     * @peerbit/test-utils bumped from 2.0.32 to 2.0.33
 
+## [7.1.16](https://github.com/dao-xyz/peerbit/compare/document-v7.1.15...document-v7.1.16) (2024-11-08)
+
+
+### Dependencies
+
+* The following workspace dependencies were updated
+  * dependencies
+    * @peerbit/rpc bumped from 5.0.18 to 5.0.19
+    * @peerbit/shared-log bumped from 9.2.12 to 9.2.13
+    * @peerbit/indexer-interface bumped from ^2.0.0 to ^2.0.1
+    * @peerbit/indexer-simple bumped from ^1.1.2 to ^1.1.3
+    * @peerbit/indexer-sqlite3 bumped from ^1.1.3 to ^1.1.4
+    * @peerbit/document-interface bumped from ^1.0.7 to ^1.0.8
+  * devDependencies
+    * @peerbit/test-utils bumped from 2.1.8 to 2.1.9
+
+## [7.1.15](https://github.com/dao-xyz/peerbit/compare/document-v7.1.14...document-v7.1.15) (2024-11-07)
+
+
+### Dependencies
+
+* The following workspace dependencies were updated
+  * dependencies
+    * @peerbit/rpc bumped from 5.0.17 to 5.0.18
+    * @peerbit/shared-log bumped from 9.2.11 to 9.2.12
+    * @peerbit/indexer-interface bumped from ^1.1.1 to ^2.0.0
+    * @peerbit/indexer-simple bumped from ^1.1.1 to ^1.1.2
+    * @peerbit/indexer-sqlite3 bumped from ^1.1.2 to ^1.1.3
+    * @peerbit/document-interface bumped from ^1.0.6 to ^1.0.7
+  * devDependencies
+    * @peerbit/test-utils bumped from 2.1.7 to 2.1.8
+
+## [7.1.14](https://github.com/dao-xyz/peerbit/compare/document-v7.1.13...document-v7.1.14) (2024-10-28)
+
+
+### Dependencies
+
+* The following workspace dependencies were updated
+  * dependencies
+    * @peerbit/program bumped from 5.0.7 to 5.0.8
+    * @peerbit/rpc bumped from 5.0.16 to 5.0.17
+    * @peerbit/shared-log bumped from 9.2.10 to 9.2.11
+  * devDependencies
+    * @peerbit/test-utils bumped from 2.1.6 to 2.1.7
+
+## [7.1.13](https://github.com/dao-xyz/peerbit/compare/document-v7.1.12...document-v7.1.13) (2024-10-28)
+
+
+### Dependencies
+
+* The following workspace dependencies were updated
+  * dependencies
+    * @peerbit/rpc bumped from 5.0.15 to 5.0.16
+    * @peerbit/shared-log bumped from 9.2.9 to 9.2.10
+  * devDependencies
+    * @peerbit/test-utils bumped from 2.1.5 to 2.1.6
+
+## [7.1.12](https://github.com/dao-xyz/peerbit/compare/document-v7.1.11...document-v7.1.12) (2024-10-28)
+
+
+### Dependencies
+
+* The following workspace dependencies were updated
+  * dependencies
+    * @peerbit/program bumped from 5.0.6 to 5.0.7
+    * @peerbit/rpc bumped from 5.0.14 to 5.0.15
+    * @peerbit/shared-log bumped from 9.2.8 to 9.2.9
+    * @peerbit/indexer-sqlite3 bumped from ^1.1.1 to ^1.1.2
+  * devDependencies
+    * @peerbit/test-utils bumped from 2.1.4 to 2.1.5
+
+## [7.1.11](https://github.com/dao-xyz/peerbit/compare/document-v7.1.10...document-v7.1.11) (2024-10-21)
+
+
+### Dependencies
+
+* The following workspace dependencies were updated
+  * dependencies
+    * @peerbit/program bumped from 5.0.5 to 5.0.6
+    * @peerbit/rpc bumped from 5.0.13 to 5.0.14
+    * @peerbit/shared-log bumped from 9.2.7 to 9.2.8
+  * devDependencies
+    * @peerbit/test-utils bumped from 2.1.3 to 2.1.4
+
+## [7.1.10](https://github.com/dao-xyz/peerbit/compare/document-v7.1.9...document-v7.1.10) (2024-10-19)
+
+
+### Dependencies
+
+* The following workspace dependencies were updated
+  * dependencies
+    * @peerbit/program bumped from 5.0.4 to 5.0.5
+    * @peerbit/rpc bumped from 5.0.12 to 5.0.13
+    * @peerbit/shared-log bumped from 9.2.6 to 9.2.7
+  * devDependencies
+    * @peerbit/test-utils bumped from 2.1.2 to 2.1.3
+
+## [7.1.9](https://github.com/dao-xyz/peerbit/compare/document-v7.1.8...document-v7.1.9) (2024-10-19)
+
+
+### Dependencies
+
+* The following workspace dependencies were updated
+  * dependencies
+    * @peerbit/shared-log bumped from 9.2.5 to 9.2.6
+
+## [7.1.8](https://github.com/dao-xyz/peerbit/compare/document-v7.1.7...document-v7.1.8) (2024-10-19)
+
+
+### Dependencies
+
+* The following workspace dependencies were updated
+  * dependencies
+    * @peerbit/rpc bumped from 5.0.11 to 5.0.12
+    * @peerbit/shared-log bumped from 9.2.4 to 9.2.5
+    * @peerbit/indexer-interface bumped from ^1.1.0 to ^1.1.1
+    * @peerbit/indexer-simple bumped from ^1.1.0 to ^1.1.1
+    * @peerbit/indexer-sqlite3 bumped from ^1.1.0 to ^1.1.1
+    * @peerbit/document-interface bumped from ^1.0.5 to ^1.0.6
+  * devDependencies
+    * @peerbit/test-utils bumped from 2.1.1 to 2.1.2
+
+## [7.1.7](https://github.com/dao-xyz/peerbit/compare/document-v7.1.6...document-v7.1.7) (2024-10-16)
+
+
+### Dependencies
+
+* The following workspace dependencies were updated
+  * dependencies
+    * @peerbit/shared-log bumped from 9.2.3 to 9.2.4
+
+## [7.1.6](https://github.com/dao-xyz/peerbit/compare/document-v7.1.5...document-v7.1.6) (2024-10-13)
+
+
+### Dependencies
+
+* The following workspace dependencies were updated
+  * dependencies
+    * @peerbit/program bumped from 5.0.3 to 5.0.4
+    * @peerbit/rpc bumped from 5.0.10 to 5.0.11
+    * @peerbit/shared-log bumped from 9.2.2 to 9.2.3
+  * devDependencies
+    * @peerbit/test-utils bumped from 2.1.0 to 2.1.1
+
+## [7.1.5](https://github.com/dao-xyz/peerbit/compare/document-v7.1.4...document-v7.1.5) (2024-10-12)
+
+
+### Dependencies
+
+* The following workspace dependencies were updated
+  * dependencies
+    * @peerbit/shared-log bumped from 9.2.1 to 9.2.2
+
+## [7.1.4](https://github.com/dao-xyz/peerbit/compare/document-v7.1.3...document-v7.1.4) (2024-10-11)
+
+
+### Dependencies
+
+* The following workspace dependencies were updated
+  * dependencies
+    * @peerbit/shared-log bumped from 9.2.0 to 9.2.1
+
+## [7.1.3](https://github.com/dao-xyz/peerbit/compare/document-v7.1.2...document-v7.1.3) (2024-10-11)
+
+
+### Bug Fixes
+
+* update for new iterator types ([c4f93a1](https://github.com/dao-xyz/peerbit/commit/c4f93a16a6456af8320995b189ae2f161d413814))
+
+
+### Dependencies
+
+* The following workspace dependencies were updated
+  * dependencies
+    * @peerbit/program bumped from 5.0.2 to 5.0.3
+    * @peerbit/rpc bumped from 5.0.9 to 5.0.10
+    * @peerbit/shared-log bumped from 9.1.2 to 9.2.0
+    * @peerbit/indexer-interface bumped from ^1.0.3 to ^1.1.0
+    * @peerbit/indexer-simple bumped from ^1.0.4 to ^1.1.0
+    * @peerbit/indexer-sqlite3 bumped from ^1.0.7 to ^1.1.0
+    * @peerbit/document-interface bumped from ^1.0.4 to ^1.0.5
+  * devDependencies
+    * @peerbit/test-utils bumped from 2.0.43 to 2.1.0
+
+## [7.1.2](https://github.com/dao-xyz/peerbit/compare/document-v7.1.1...document-v7.1.2) (2024-09-26)
+
+
+### Dependencies
+
+* The following workspace dependencies were updated
+  * dependencies
+    * @peerbit/rpc bumped from 5.0.8 to 5.0.9
+    * @peerbit/shared-log bumped from 9.1.1 to 9.1.2
+    * @peerbit/indexer-sqlite3 bumped from ^1.0.6 to ^1.0.7
+  * devDependencies
+    * @peerbit/test-utils bumped from 2.0.42 to 2.0.43
+
+## [7.1.1](https://github.com/dao-xyz/peerbit/compare/document-v7.1.0...document-v7.1.1) (2024-09-01)
+
+
+### Bug Fixes
+
+* add eager option for searching remote ([57b8640](https://github.com/dao-xyz/peerbit/commit/57b8640ee53a25d81695f7175ca6747aa9dfe58a))
+
+
+### Dependencies
+
+* The following workspace dependencies were updated
+  * dependencies
+    * @peerbit/program bumped from 5.0.1 to 5.0.2
+    * @peerbit/rpc bumped from 5.0.7 to 5.0.8
+    * @peerbit/shared-log bumped from 9.1.0 to 9.1.1
+    * @peerbit/indexer-interface bumped from ^1.0.2 to ^1.0.3
+    * @peerbit/indexer-simple bumped from ^1.0.3 to ^1.0.4
+    * @peerbit/indexer-sqlite3 bumped from ^1.0.5 to ^1.0.6
+    * @peerbit/document-interface bumped from ^1.0.3 to ^1.0.4
+  * devDependencies
+    * @peerbit/test-utils bumped from 2.0.41 to 2.0.42
+
 ## [7.1.0](https://github.com/dao-xyz/peerbit/compare/document-v7.0.14...document-v7.1.0) (2024-08-25)
 
 

@@ -66,6 +66,43 @@
   * dependencies
     * @peerbit/crypto bumped from 2.1.7 to 2.2.0
 
+## [5.1.1](https://github.com/dao-xyz/peerbit/compare/stream-interface-v5.1.0...stream-interface-v5.1.1) (2024-10-28)
+
+
+### Bug Fixes
+
+* return type for getPublicKey ([74b99cb](https://github.com/dao-xyz/peerbit/commit/74b99cb0f2bb9b9f5d626da044b9e74dcef1000a))
+
+## [5.1.0](https://github.com/dao-xyz/peerbit/compare/stream-interface-v5.0.5...stream-interface-v5.1.0) (2024-10-19)
+
+
+### Features
+
+* add method for resolving publickey from hash ([8ec159b](https://github.com/dao-xyz/peerbit/commit/8ec159b3df85eb5cf6aad57181c4b425e147872a))
+
+## [5.0.5](https://github.com/dao-xyz/peerbit/compare/stream-interface-v5.0.4...stream-interface-v5.0.5) (2024-10-11)
+
+
+### Bug Fixes
+
+* update libp2p ([946a904](https://github.com/dao-xyz/peerbit/commit/946a904ea6cade2bf3de47f014a3fb96ed99e727))
+
+
+### Dependencies
+
+* The following workspace dependencies were updated
+  * dependencies
+    * @peerbit/crypto bumped from 2.3.1 to 2.3.2
+
+## [5.0.4](https://github.com/dao-xyz/peerbit/compare/stream-interface-v5.0.3...stream-interface-v5.0.4) (2024-09-01)
+
+
+### Dependencies
+
+* The following workspace dependencies were updated
+  * dependencies
+    * @peerbit/crypto bumped from 2.3.0 to 2.3.1
+
 ## [5.0.3](https://github.com/dao-xyz/peerbit/compare/stream-interface-v5.0.2...stream-interface-v5.0.3) (2024-07-20)
 
 

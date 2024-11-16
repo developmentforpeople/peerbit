@@ -1,5 +1,4 @@
 import { field, fixedArray, variant, vec } from "@dao-xyz/borsh";
-import { Cache } from "@peerbit/cache";
 import { Entry, EntryType, type ShallowEntry } from "@peerbit/log";
 import { Log } from "@peerbit/log";
 import { logger as loggerFn } from "@peerbit/logger";
@@ -88,71 +87,62 @@ export class ResponseIPrune extends TransportMessage {
 
 const MAX_EXCHANGE_MESSAGE_SIZE = 1e5; // 100kb. Too large size might not be faster (even if we can do 5mb)
 
-export const createExchangeHeadsMessages = async (
+export const createExchangeHeadsMessages = async function* (
 	log: Log<any>,
-	heads: Entry<any>[],
-	gidParentCache: Cache<Entry<any>[]>,
-): Promise<ExchangeHeadsMessage<any>[]> => {
-	const messages: ExchangeHeadsMessage<any>[] = [];
+	heads: Entry<any>[] | string[],
+): AsyncGenerator<ExchangeHeadsMessage<any>, void, void> {
 	let size = 0;
 	let current: EntryWithRefs<any>[] = [];
 	const visitedHeads = new Set<string>();
 	for (const fromHead of heads) {
-		visitedHeads.add(fromHead.hash);
+		let entry = fromHead instanceof Entry ? fromHead : await log.get(fromHead);
+		if (!entry) {
+			continue; // missing this entry, could be deleted while iterating
+		}
+
+		visitedHeads.add(entry.hash);
 
 		// TODO eventually we don't want to load all refs
 		// since majority of the old leader would not be interested in these anymore
-		const refs = (
-			await allEntriesWithUniqueGids(log, fromHead, gidParentCache)
-		).filter((x) => {
+		const refs = (await allEntriesWithUniqueGids(log, entry)).filter((x) => {
 			if (visitedHeads.has(x.hash)) {
 				return false;
 			}
 			visitedHeads.add(x.hash);
 			return true;
 		});
+
 		if (refs.length > 1000) {
 			logger.warn("Large refs count: ", refs.length);
 		}
 		current.push(
 			new EntryWithRefs({
-				entry: fromHead,
+				entry,
 				gidRefrences: refs.map((x) => x.meta.gid),
 			}),
 		);
 
-		size += fromHead.size;
+		size += entry.size;
 		if (size > MAX_EXCHANGE_MESSAGE_SIZE) {
 			size = 0;
-			messages.push(
-				new ExchangeHeadsMessage({
-					heads: current,
-				}),
-			);
+			yield new ExchangeHeadsMessage({
+				heads: current,
+			});
 			current = [];
 			continue;
 		}
 	}
 	if (current.length > 0) {
-		messages.push(
-			new ExchangeHeadsMessage({
-				heads: current,
-			}),
-		);
+		yield new ExchangeHeadsMessage({
+			heads: current,
+		});
 	}
-	return messages;
 };
 
 export const allEntriesWithUniqueGids = async (
 	log: Log<any>,
 	entry: Entry<any>,
-	gidParentCache: Cache<Entry<any>[]>,
 ): Promise<Entry<any>[]> => {
-	const cachedValue = gidParentCache.get(entry.hash);
-	if (cachedValue != null) {
-		return cachedValue;
-	}
-
 	// TODO optimize this
 	const map: Map<string, ShallowEntry | Entry<any>> = new Map();
 	let curr: (Entry<any> | ShallowEntry)[] = [entry];
@@ -180,9 +170,10 @@ export const allEntriesWithUniqueGids = async (
 	}
 	const value = [
 		...(await Promise.all(
-			[...map.values()].map((x) => log.entryIndex.get(x.hash)),
+			[...map.values()].map((x) =>
+				x instanceof Entry ? x : log.entryIndex.get(x.hash),
+			),
 		)),
 	].filter((x) => !!x) as Entry<any>[];
-	gidParentCache.add(entry.hash, value);
 	return value;
 };
